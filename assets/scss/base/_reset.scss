@@ -1,0 +1,129 @@
+body {
+  min-width: 320px;
+  line-height: normal;
+  font-size: 14px;
+  color: $booking-color-text1;
+  scroll-behavior: smooth;
+  // 크롭브라우저에서 폰트를 좀 더 얇야보이게
+  // 보통 디자인은 antialiased가 되어 있는 상태로 넘어옴
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+input,
+textarea,
+select,
+table,
+button,
+code {
+  font-family: $font-default;
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  // 패딩과 보더까지가 컨텐츠의 사이즈로 잡히게
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  // 클릭시 약간 번쩍이는것 제거
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+// class로 hidden이 있거나, 어트리뷰트로 있을 경우
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+select,
+input,
+textarea,
+button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input:disabled {
+  background-color: rgba(255, 255, 255, 0);
+  cursor: not-allowed;
+}
+
+select {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+input,
+textarea {
+  font-size: inherit;
+  border: 0;
+  &::placeholder {
+    /* Chrome, Safari, Firefox */
+    color: #c9c9c9;
+    // 파이어폭스에서는 내가 지정한 플레이스홀더 값을 opacity100%로 보여주는게 아니라 약간 흐릿하게 보여지기 땜에 방어하고자 1을 넣어줌
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    /* IE, Edge */
+    color: #c9c9c9;
+    opacity: 1;
+  }
+  &[readonly],
+  &:disabled {
+    &::placeholder {
+      /* Chrome, Safari, Firefox */
+      color: rgba(#000, 0.2);
+      opacity: 1;
+    }
+    &:-ms-input-placeholder {
+      /* IE, Edge */
+      color: rgba(#000, 0.2);
+      opacity: 1;
+    }
+  }
+  // input 클리어 버튼(심미적으로 안좋음)
+  &::-ms-clear,
+  &::-ms-reveal {
+    /* IE, Edge */
+    display: none;
+  }
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+}

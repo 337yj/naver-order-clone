@@ -1,0 +1,40 @@
+// 자주 쓰는 세트
+
+.screen-out {
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+.scroll-x {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  // IE
+  -ms-overflow-style: none;
+  // firefox
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+body.scroll-off {
+  overflow: hidden;
+  -ms-touch-action: none;
+  touch-action: none;
+}
+
+// functional css
+// 클래스명에 기능을 담고있음
+.fw700 {
+  font-weight: 700;
+}
+
+.color-point {
+  color: $point-color;
+}
